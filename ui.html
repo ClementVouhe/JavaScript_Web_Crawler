@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Crawler</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script language="javascript">
+      $.ajax({
+        url: "http://localhost:3000/queue/list",
+        type:"GET",
+        dataType:"json",
+        success:function_current_url(),
+      });
+ 
+      function function_current_url(data){
+        document.getElementById("current_url").innerHtml = data;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="current_url">Current URl</div>
+  </body>
+</html>
