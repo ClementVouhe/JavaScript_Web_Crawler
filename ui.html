@@ -3,21 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <title>Web Crawler</title>
-    <script type="text/javascript" src="jquery.js"></script>
-    <script language="javascript">
-      $.ajax({
+    <script type="text/javascript" src="jquery.js">
+      var response = $.ajax({
         url: "http://localhost:3000/queue/list",
         type:"GET",
         dataType:"json",
-        success:function_current_url(),
+        success: function alert_url(reponse){
+          alert(response);
+        }
       });
- 
-      function function_current_url(data){
-        document.getElementById("current_url").innerHtml = data;
-      }
     </script>
   </head>
   <body>
-    <div id="current_url">Current URl</div>
+    <div id="current_url">Current URL</div>
   </body>
 </html>
