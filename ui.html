@@ -2,19 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Web Crawler</title>
-    <script type="text/javascript" src="jquery.js">
-      var response = $.ajax({
-        url: "http://localhost:3000/queue/list",
-        type:"GET",
-        dataType:"json",
-        success: function alert_url(reponse){
-          alert(response);
-        }
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      $.ajax({
+         url:"http://127.0.0.1:3000/queue/list",
+         type:"GET",
+         dataType:"json",
+         success: function write_urls(queue){
+           $('#urls').append('<div>'+queue+'</div>'); 
+         }
       });
     </script>
   </head>
   <body>
-    <div id="current_url">Current URL</div>
+    <h2>URLs</h2>
+    <div id="urls">
+      <!-- urls -->
+    </div>
   </body>
 </html>
